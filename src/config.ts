@@ -7,6 +7,7 @@ export function MixConfig(cnf: Config, url: URL, address: string, provider: stri
 	const hostname: string = MuddleDomain(url.hostname)
   try {
 		let conf = {...cnf};
+		
     const type = conf.network || conf.type || ""
 		if (!["ws", "h2", "http"].includes(type)) {
 			throw new Error("Network is not supported!")
